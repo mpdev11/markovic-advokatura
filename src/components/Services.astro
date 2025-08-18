@@ -1,0 +1,48 @@
+---
+import { services } from "../data/navigation";
+---
+
+<section id="advokatske-usluge" class="fade-in py-24 sm:py-32 relative">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
+    <div class="mx-auto max-w-2xl lg:text-center">
+      <span class="subheading">Advokatske usluge</span>
+      <h3 class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Sve što Vam treba na jednom mestu</h3>
+      <p class="mt-6 text-lg leading-8 text-gray-600">
+        Pružamo širok spektar pravnih usluga, od porodičnog do privrednog prava, sa fokusom na Vaše potrebe i zaštitu Vaših interesa.
+      </p>
+    </div>
+    <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
+      <div class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
+        {
+          services.map((service) => (
+            <div class="flex flex-col p-8 rounded-2xl bg-background backdrop-blur-xl border border-white/40 shadow-[0_3px_15px_rgb(0,0,0,0.1)] transition-all duration-300 relative overflow-hidden group">
+              <div class="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+              <!-- Icon -->
+              <div class="flex justify-center mb-6 relative z-10">
+                <div class="h-16 w-12 flex items-center justify-center text-primary" set:html={service.icon} />
+              </div>
+
+              <!-- Heading -->
+              <h3 class="text-xl font-semibold leading-7 text-gray-900 text-center mb-4 relative z-10">
+                {service.label}
+              </h3>
+
+              <!-- Description -->
+              <p class="text-base leading-7 text-gray-600 text-center flex-auto relative z-10">
+                {service.description}
+              </p>
+
+              <!-- Read More Button -->
+              <div class="mt-6 text-center relative z-10">
+                <a href={service.path} class="inline-flex items-center text-base font-semibold leading-6 text-primary hover:text-primary/80 transition-colors duration-200">
+                  Saznajte više <span aria-hidden="true" class="ml-1">→</span>
+                </a>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

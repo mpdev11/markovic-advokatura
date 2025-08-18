@@ -1,0 +1,242 @@
+---
+import { navigation } from "../../data/navigation";
+import logo from "../../assets/images/logo.svg";
+---
+
+<header
+  x-data="{ 
+    mobileMenuOpen: false,
+    isScrolled: false,
+    isHome: false,
+    init() {
+      this.isHome = window.location.pathname === '/';
+      this.updateScrollState();
+      
+      window.addEventListener('scroll', () => {
+        this.updateScrollState();
+      });
+      // Also handle resize to update the threshold if screen size changes
+      window.addEventListener('resize', () => {
+        this.updateScrollState();
+      });
+    },
+    updateScrollState() {
+      this.isScrolled = window.scrollY > 0;
+    }
+  }"
+  class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+  :class="{ 'bg-white shadow-md': isScrolled || !isHome, 'bg-transparent': !isScrolled && isHome }">
+  <nav
+    class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8 transition-all duration-300"
+    :class="{ 'p-2': isScrolled }"
+    aria-label="Global">
+    <div class="flex lg:flex-1">
+      <a href="/" class="-m-1.5 p-1.5">
+        <img 
+          src={logo.src} 
+          alt="Logo" 
+          class="transition-all duration-300 h-12 lg:h-20" />
+      </a>
+    </div>
+    <div class="flex lg:hidden">
+      <button
+        type="button"
+        @click="mobileMenuOpen = true"
+        class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5">
+        <span class="sr-only">Open main menu</span>
+        <svg
+          class="size-10"
+          :class="{ 'text-gray-900': isScrolled || !isHome, 'text-background': !isScrolled && isHome }"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          aria-hidden="true"
+          data-slot="icon">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5">
+          </path>
+        </svg>
+      </button>
+    </div>
+    <div class="hidden lg:flex lg:gap-x-12">
+      {
+        navigation.map((item) => (
+          <div class="relative group">
+            <a
+              href={item.path}
+              class="text-lg/6 font-semibold flex items-center gap-1 justify-center transition-colors duration-300"
+              :class="{ 'text-gray-900': isScrolled || !isHome, 'text-background': !isScrolled && isHome }">
+              {item.label}
+              {item.children && (
+                <svg
+                  class="w-4 h-4"
+                  :class="{ 'text-gray-900': isScrolled || !isHome, 'text-background': !isScrolled && isHome }"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="2"
+                  stroke="currentColor">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                  />
+                </svg>
+              )}
+            </a>
+            {item.children && (
+              <div
+                class="absolute left-0 top-full w-max bg-white rounded-md shadow-lg 
+                opacity-0 invisible group-hover:opacity-100 group-hover:visible
+                transition-all duration-200 transform origin-top-left 
+                scale-95 group-hover:scale-100 overflow-hidden">
+                {item.children.map((child, index) => (
+                  <a
+                    href={child.path}
+                    class="block p-2 text-sm hover:bg-gray-100 hover:text-gray-700 flex items-center gap-2 border-b border-gray-200 last:border-b-0 first:rounded-t-md last:rounded-b-md text-lg">
+                    <div class="text-primary flex-shrink-0 flex items-center justify-center [&>svg]:w-7 [&>svg]:h-7" set:html={child.icon} />
+                    {child.label}
+                  </a>
+                ))}
+              </div>
+            )}
+          </div>
+        ))
+      }
+    </div>
+    <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+      <a
+        href="#contact"
+        class="inline-flex items-center justify-center gap-2 px-4 py-2 text-lg font-semibold bg-primary rounded-lg hover:bg-primary/90 transition-colors text-background">
+        <svg
+          class="w-4 h-4"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+          stroke="currentColor">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75">
+          </path>
+        </svg>
+        Kontakt
+      </a>
+    </div>
+  </nav>
+  <!-- Mobile menu, show/hide based on menu open state. -->
+  <div
+    class="lg:hidden mobile-menu"
+    role="dialog"
+    aria-modal="true"
+    x-show="mobileMenuOpen"
+    x-transition:enter="transition ease-out duration-300"
+    x-transition:enter-start="opacity-0"
+    x-transition:enter-end="opacity-100"
+    x-transition:leave="transition ease-in duration-200"
+    x-transition:leave-start="opacity-100"
+    x-transition:leave-end="opacity-0">
+    <!-- Background backdrop, show/hide based on slide-over state. -->
+    <div class="fixed inset-0 z-10 bg-black bg-opacity-25"></div>
+    <div
+      class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
+      @click.outside="mobileMenuOpen = false">
+      <div class="flex items-center justify-between">
+        <a href="/" class="-m-1.5 p-1.5">
+          <img src={logo.src} alt="Logo" class="h-16 w-auto" />
+        </a>
+        <button
+          type="button"
+          class="-m-2.5 rounded-md p-2.5"
+          @click="mobileMenuOpen = false">
+          <span class="sr-only">Close menu</span>
+          <svg
+            class="size-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            aria-hidden="true"
+            data-slot="icon">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M6 18 18 6M6 6l12 12">
+            </path>
+          </svg>
+        </button>
+      </div>
+      <div class="mt-6 flow-root">
+        <div class="-my-6 divide-y divide-gray-500/10">
+          <div class="space-y-2 py-6">
+            {
+              navigation.map((item) => (
+                <div x-data="{ isOpen: false }">
+                  <a
+                    href={item.children ? "#" : item.path}
+                    class="rounded-lg pxpy-2 text-base/7 font-semibold hover:bg-gray-50 hover:text-gray-900 flex items-center justify-between"
+                    @click="isOpen = !isOpen">
+                    {item.label}
+                    {item.children && (
+                      <svg
+                        class="w-4 h-4 transition-transform duration-200"
+                        x-bind:class="{ 'rotate-180': isOpen }"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="2"
+                        stroke="currentColor">
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                        />
+                      </svg>
+                    )}
+                  </a>
+                  {item.children && (
+                    <div
+                      x-show="isOpen"
+                      x-transition:enter="transition ease-out duration-200"
+                      x-transition:enter-start="opacity-0 -translate-y-2"
+                      x-transition:enter-end="opacity-100 translate-y-0">
+                      {item.children.map((child, index) => (
+                        <a
+                          href={child.path}
+                          class="block rounded-lg py-2 text-sm/7 font-semibold hover:bg-gray-50 hover:text-gray-900 flex items-center gap-2 border-b border-gray-200 last:border-b-0 first:rounded-t-md last:rounded-b-md">
+                          <div class="text-primary flex-shrink-0 flex items-center justify-center [&>svg]:w-6 [&>svg]:h-6" set:html={child.icon} />
+                          {child.label}
+                        </a>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))
+            }
+          </div>
+          <div class="py-6">
+            <a
+              href="#contact"
+              @click="mobileMenuOpen = false"
+              class="inline-flex items-center justify-center gap-2 px-4 py-2 text-sm font-semibold bg-primary rounded-lg hover:bg-primary/90 transition-colors text-background">
+              <svg
+                class="w-4 h-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75">
+                </path>
+              </svg>
+              Kontakt
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
