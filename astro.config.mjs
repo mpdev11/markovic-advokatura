@@ -10,4 +10,5 @@ export default defineConfig({
   integrations: [tailwind(), alpinejs()],
   site: "https://mpdev11.github.io", // optional, good for sitemaps, RSS, etc.
   base: "/markovic-advokatura/",
+  trailingSlash: "always",
 });
