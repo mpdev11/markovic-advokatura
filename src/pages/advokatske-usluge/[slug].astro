@@ -20,7 +20,9 @@ const navigationService = services.find((s) => s.path.split("/").pop() === servi
 ---
 
 <PageLayout
-  title={navigationService?.label || service.data.title || "Advokatske usluge"}
+  title={(navigationService?.label && `${navigationService.label} | Marković Advokatura`) ||
+    (service.data.title && `${service.data.title} | Marković Advokatura`) ||
+    "Advokatske usluge | Marković Advokatura"}
   description={navigationService?.description || service.data.description || "Stručna pravna pomoć i savetovanje"}>
   <section class="pt-32 pb-16 lg:pt-44 lg:pb-20">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
