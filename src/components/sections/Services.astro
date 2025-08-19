@@ -22,7 +22,7 @@ const basePath = import.meta.env.BASE_URL;
 
               <!-- Icon -->
               <div class="flex justify-center mb-6 relative z-10">
-                <div class="h-16 w-12 flex items-center justify-center text-primary" set:html={service.icon} />
+                <div class="h-16 w-12 flex items-center justify-center text-primary [&>svg]:w-16 [&>svg]:h-16" set:html={service.icon} />
               </div>
 
               <!-- Heading -->
