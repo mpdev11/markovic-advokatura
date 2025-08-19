@@ -2,6 +2,7 @@
 import logo from "../../assets/images/logo.svg";
 import SocialIcons from "../UI/SocialIcons.astro";
 const currentYear = new Date().getFullYear();
+const basePath = import.meta.env.BASE_URL;
 
 const contactInfo = {
   phone: "+381 65 429 1705",
@@ -13,7 +14,7 @@ const contactInfo = {
   <div class="container mx-auto px-4 max-w-7xl">
     <!-- Logo and Quote Section -->
     <div class="flex flex-col items-center space-y-6 mb-12">
-      <a href="/" class="flex items-center">
+      <a href={`${basePath}`} class="flex items-center">
         <img src={logo.src} alt="Marković Advokatura" class="h-24 w-auto" />
       </a>
       <div class="text-center">

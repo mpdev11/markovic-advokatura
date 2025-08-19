@@ -3,6 +3,8 @@ import PageLayout from "../../layouts/PageLayout.astro";
 import { services } from "../../data/navigation.js";
 import { getCollection, type CollectionEntry } from "astro:content";
 
+const basePath = import.meta.env.BASE_URL;
+
 export async function getStaticPaths() {
   const servicesCollection = await getCollection("services");
   return servicesCollection.map((service: CollectionEntry<"services">) => ({
@@ -48,7 +50,7 @@ const navigationService = services.find((s) => s.path.split("/").pop() === servi
 
         <div class="mt-12 flex flex-col sm:flex-row gap-6 justify-center items-center">
           <a
-            href="#contact"
+            href={`${basePath}#contact`}
             class="inline-flex items-center justify-center gap-2 px-6 py-3 text-lg font-bold bg-primary rounded-lg transition-all duration-300 text-background shadow-lg hover:bg-primary/90 hover:scale-105">
             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
               <path
@@ -60,7 +62,7 @@ const navigationService = services.find((s) => s.path.split("/").pop() === servi
             Kontaktirajte me
           </a>
           <a
-            href="/advokatske-usluge"
+            href={`${basePath}advokatske-usluge`}
             class="border-b-secondary border-b-2 inline-flex items-center text-lg font-semibold leading-6 text-secondary hover:text-primary transition-colors duration-200 hover:border-b-primary">
             Pregledajte sve usluge <span aria-hidden="true" class="ml-1">→</span>
           </a>

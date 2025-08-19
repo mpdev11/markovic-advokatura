@@ -1,5 +1,7 @@
 ---
 import { services } from "../data/navigation";
+
+const basePath = import.meta.env.BASE_URL;
 ---
 
 <section id="advokatske-usluge" class="py-24 sm:py-32 relative">
@@ -35,7 +37,7 @@ import { services } from "../data/navigation";
 
               <!-- Read More Button -->
               <div class="mt-6 text-center relative z-10">
-                <a href={service.path} class="inline-flex items-center text-base font-semibold leading-6 text-primary hover:text-primary/80 transition-colors duration-200">
+                <a href={`${basePath}${service.path}`} class="inline-flex items-center text-base font-semibold leading-6 text-primary hover:text-primary/80 transition-colors duration-200">
                   Saznajte više <span aria-hidden="true" class="ml-1">→</span>
                 </a>
               </div>
