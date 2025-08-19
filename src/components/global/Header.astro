@@ -5,7 +5,7 @@ import logo from "../../assets/images/logo.svg";
 const basePath = import.meta.env.BASE_URL;
 ---
 
-<header class="fixed top-0 left-0 right-0 z-50 bg-white shadow-md">
+<header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="header">
   <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
     <div class="flex lg:flex-1">
       <a href={`${basePath}`} class="-m-1.5 p-1.5">
@@ -13,10 +13,10 @@ const basePath = import.meta.env.BASE_URL;
       </a>
     </div>
     <div class="flex lg:hidden">
-      <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5">
+      <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5" id="mobile-menu-button">
         <span class="sr-only">Open main menu</span>
         <svg
-          class="size-10 text-gray-900"
+          class="hamburger-icon size-10 text-gray-900"
           fill="none"
           viewBox="0 0 24 24"
           stroke-width="1.5"
@@ -30,11 +30,11 @@ const basePath = import.meta.env.BASE_URL;
     <div class="hidden lg:flex lg:gap-x-12">
       {
         navigation.map((item) => (
-          <div class="relative group">
+          <div class="relative group primary-navigation">
             <a href={`${basePath}${item.path}`} class="text-lg/6 font-semibold flex items-center gap-1 justify-center text-gray-900">
               {item.label}
               {item.children && (
-                <svg class="w-4 h-4 text-gray-900" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                 </svg>
               )}
@@ -77,13 +77,15 @@ const basePath = import.meta.env.BASE_URL;
   <!-- Mobile menu -->
   <div class="lg:hidden mobile-menu hidden" role="dialog" aria-modal="true">
     <!-- Background backdrop -->
-    <div class="fixed inset-0 z-10 bg-black bg-opacity-25"></div>
-    <div class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+    <div class="fixed inset-0 z-10 bg-black bg-opacity-25 transition-opacity duration-300" id="mobile-backdrop"></div>
+    <div
+      class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 transform translate-x-full transition-transform duration-300 ease-in-out"
+      id="mobile-menu-panel">
       <div class="flex items-center justify-between">
         <a href={`${basePath}`} class="-m-1.5 p-1.5">
           <img src={logo.src} alt="Logo" class="h-16 w-auto" />
         </a>
-        <button type="button" class="-m-2.5 rounded-md p-2.5">
+        <button type="button" class="-m-2.5 rounded-md p-2.5" id="mobile-menu-close">
           <span class="sr-only">Close menu</span>
           <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"></path>
@@ -141,3 +143,85 @@ const basePath = import.meta.env.BASE_URL;
     </div>
   </div>
 </header>
+
+<script>
+  // Check if we're on the home page
+  const isHomePage =
+    window.location.pathname === import.meta.env.BASE_URL ||
+    window.location.pathname === import.meta.env.BASE_URL.replace(/\/$/, "") ||
+    window.location.pathname === "/";
+
+  const header = document.getElementById("header");
+
+  if (isHomePage) {
+    // Start with transparent header on home page
+    header.classList.add("bg-transparent", "shadow-none");
+
+    // Function to handle scroll
+    function handleScroll() {
+      if (window.scrollY > 50) {
+        // Scrolled down - make header white with shadow
+        header.classList.remove("bg-transparent", "shadow-none");
+        header.classList.add("bg-white", "shadow-md");
+      } else {
+        // At top - make header transparent
+        header.classList.remove("bg-white", "shadow-md");
+        header.classList.add("bg-transparent", "shadow-none");
+      }
+    }
+
+    // Add scroll event listener
+    window.addEventListener("scroll", handleScroll);
+
+    // Call once on load to set initial state
+    handleScroll();
+  } else {
+    // Not home page - always white header
+    header.classList.add("bg-white", "shadow-md");
+  }
+
+  // Mobile menu functionality
+  const mobileMenuButton = document.getElementById("mobile-menu-button");
+  const mobileMenuClose = document.getElementById("mobile-menu-close");
+  const mobileMenu = document.querySelector(".mobile-menu");
+  const mobileMenuPanel = document.getElementById("mobile-menu-panel");
+  const mobileBackdrop = document.getElementById("mobile-backdrop");
+
+  function openMobileMenu() {
+    mobileMenu?.classList.remove("hidden");
+
+    // Trigger animations after a small delay to ensure the element is visible
+    setTimeout(() => {
+      mobileBackdrop?.classList.add("bg-opacity-25");
+      mobileMenuPanel?.classList.remove("translate-x-full");
+    }, 10);
+
+    document.body.style.overflow = "hidden"; // Prevent background scrolling
+  }
+
+  function closeMobileMenu() {
+    // Start closing animations
+    mobileBackdrop?.classList.remove("bg-opacity-25");
+    mobileMenuPanel?.classList.add("translate-x-full");
+
+    // Hide the menu after animation completes
+    setTimeout(() => {
+      mobileMenu?.classList.add("hidden");
+      document.body.style.overflow = ""; // Restore scrolling
+    }, 300);
+  }
+
+  // Event listeners for mobile menu
+  mobileMenuButton?.addEventListener("click", openMobileMenu);
+  mobileMenuClose?.addEventListener("click", closeMobileMenu);
+
+  // Close menu when clicking on backdrop
+  mobileBackdrop?.addEventListener("click", closeMobileMenu);
+
+  // Close menu when pressing Escape key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !mobileMenu?.classList.contains("hidden")) {
+      closeMobileMenu();
+    }
+  });
+</script>

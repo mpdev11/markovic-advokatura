@@ -65,3 +65,8 @@
 .service-heading {
   @apply text-2xl font-semibold leading-7 text-secondary uppercase;
 }
+
+header.bg-transparent .primary-navigation > a,
+header.bg-transparent .hamburger-icon {
+  @apply text-background;
+}
