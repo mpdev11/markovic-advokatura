@@ -21,7 +21,7 @@
 }
 
 .content {
-  @apply text-lg;
+  @apply text-lg leading-relaxed text-gray-600;
 }
 
 .content p {
@@ -41,6 +41,9 @@
 }
 .content ol > li {
   @apply mt-5;
+}
+.content ol > li > p {
+  @apply my-0;
 }
 .content li > p {
   @apply inline-block

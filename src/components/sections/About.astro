@@ -1,5 +1,5 @@
 ---
-import portrait from "../assets/images/portrait.jpg";
+import portrait from "../../assets/images/portrait.jpg";
 
 const basePath = import.meta.env.BASE_URL;
 ---
@@ -114,7 +114,7 @@ const basePath = import.meta.env.BASE_URL;
         <!-- CTA Button -->
         <div class="pt-4">
           <a
-            href="/o-meni"
+            href={`${basePath}o-meni`}
             class="inline-flex items-center px-6 py-3 border border-transparent text-lg font-medium rounded-lg text-background bg-primary hover:bg-primary/90 transition-colors duration-200">
             Saznajte više o meni <span aria-hidden="true" class="ml-1">→</span>
           </a>

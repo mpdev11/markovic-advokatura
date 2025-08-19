@@ -1,31 +1,45 @@
 ---
 import PageLayout from "../layouts/PageLayout.astro";
+import signature from "../assets/images/signature.png";
 ---
 
 <PageLayout title="O meni" description="O meni">
-  <section class="container mx-auto px-4 max-w-7xl py-16 content">
-    <p>
-      Rođen sam 1994. godine u Smederevuuu, gde sam završio OŠ „Dr Jovan Cvijić”, kao i Gimnaziju. Pravni fakultet Univerziteta u Beogradu upisao sam
-      vođen željom da bavljenje pravnom naukom ne bude samo profesija, već i moj lični doprinos društvu kojem pripadam. Tokom osnovnih studija, a
-      potom i master studija na smeru pravo intelektualne svojine, razvio sam posvećenost i odgovornost prema pravnom pozivu koji zahteva ne samo
-      znanje, već i moralni integritet.
-    </p>
-    <p>
-      Nakon završenih osnovnih i master akademskih studija, pripravnički staž obavljam u Beogradu i posle polaganja pravosudnog i advokatskog ispita,
-      upisujem se u Imenik advokata Advokatske komore Požarevca. Pored toga, posedujem sertifikat o stečenim posebnim znanjima iz oblasti prava deteta
-      i prestupništva mladih, zbog čega sam ovlašćen da postupam kao branilac odnosno zastupnik maloletnih učinioca krivičnih dela i maloletnih
-      oštećenih lica. Takođe, registrovan sam i kao profesionalni korisnik eKatastra što značajno ubrzava postupke u vezi sa prometom, upisom i
-      zaštitom prava na nepokretnostima.
-    </p>
-    <p>
-      U skladu sa svojim kućnim vaspitanjem, moralnim ubeđenjima i pravnim obrazovanjem, smatram da advokatura nije samo zaštita pojedinaca, već i
-      odbrana vrednosti na kojima jedno društvo počiva. Samim tim, moje lično i profesionalno opredeljenje je da u vremenu u kojem je glas razuma sve
-      potrebniji, moje delovanje bude odgovorno, stručno, savesno, transparentno, pravovremeno i pošteno.
-    </p>
-    <p>
-      Verujem da se kvalitet pravnog zastupanja ne meri samo stručnošću, već i odnosom koji se gradi sa klijentom. Zbog toga se uvek zalažem da sa
-      svojim klijentima ostvarim odnos poverenja, jer smatram da samo tako možemo doći do željenih rezultata. Sa druge strane, svestan sam da se
-      poverenje ne dobija rečima, već da se zaslužuje delima.
-    </p>
+  <section class="pt-32 pb-16 lg:pt-44 lg:pb-20">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="mx-auto max-w-4xl border-b border-primary/30 mb-6 pb-6">
+        <h1 class="service-heading !normal-case">Adv. Miodrag Marković - moja misija i vizija</h1>
+      </div>
+      <div class="mx-auto max-w-4xl">
+        <div class="content">
+          <p>
+            Rođen sam 1994. godine u Smederevu, gde sam završio OŠ „Dr Jovan Cvijić”, kao i Gimnaziju. Pravni fakultet Univerziteta u Beogradu upisao
+            sam vođen željom da bavljenje pravnom naukom ne bude samo profesija, već i moj lični doprinos društvu kojem pripadam. Tokom osnovnih
+            studija, a potom i master studija na smeru pravo intelektualne svojine, razvio sam posvećenost i odgovornost prema pravnom pozivu koji
+            zahteva ne samo znanje, već i moralni integritet.
+          </p>
+
+          <p>
+            Nakon završenih osnovnih i master akademskih studija, pripravnički staž obavljam u Beogradu i posle polaganja pravosudnog i advokatskog
+            ispita, upisujem se u Imenik advokata Advokatske komore Požarevca. Pored toga, posedujem sertifikat o stečenim posebnim znanjima iz
+            oblasti prava deteta i prestupništva mladih, zbog čega sam ovlašćen da postupam kao branilac odnosno zastupnik maloletnih učinioca
+            krivičnih dela i maloletnih oštećenih lica. Takođe, registrovan sam i kao profesionalni korisnik eKatastra što značajno ubrzava postupke u
+            vezi sa prometom, upisom i zaštitom prava na nepokretnostima.
+          </p>
+
+          <p>
+            U skladu sa svojim kućnim vaspitanjem, moralnim ubeđenjima i pravnim obrazovanjem, smatram da advokatura nije samo zaštita pojedinaca, već
+            i odbrana vrednosti na kojima jedno društvo počiva. Samim tim, moje lično i profesionalno opredeljenje je da u vremenu u kojem je glas
+            razuma sve potrebniji, moje delovanje bude odgovorno, stručno, savesno, transparentno, pravovremeno i pošteno.
+          </p>
+
+          <p>
+            Verujem da se kvalitet pravnog zastupanja ne meri samo stručnošću, već i odnosom koji se gradi sa klijentom. Zbog toga se uvek zalažem da
+            sa svojim klijentima ostvarim odnos poverenja, jer smatram da samo tako možemo doći do željenih rezultata. Sa druge strane, svestan sam da
+            se poverenje ne dobija rečima, već da se zaslužuje delima.
+          </p>
+        </div>
+        <img src={signature.src} alt="Signature" class="w-56 ml-auto" />
+      </div>
+    </div>
   </section>
 </PageLayout>
