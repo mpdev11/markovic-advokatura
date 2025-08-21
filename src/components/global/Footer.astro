@@ -25,7 +25,7 @@ const contactInfo = {
           <h3 class="text-xl font-main font-semibold text-background mb-4 uppercase">Kontakt</h3>
           <a
             href={`tel:${contactInfo.phone}`}
-            class="text-background decoration-background underline hover:text-white transition-colors duration-200 flex items-center gap-2">
+            class="text-background decoration-background underline underline-offset-4 hover:text-white transition-colors duration-200 flex items-center gap-2">
             <svg
               version="1.1"
               id="fi_126509"
@@ -75,7 +75,7 @@ const contactInfo = {
           </a>
           <a
             href={`mailto:${contactInfo.email}`}
-            class="text-background decoration-background underline hover:text-white transition-colors duration-200 flex items-center gap-2 justify-end">
+            class="text-background decoration-background underline underline-offset-4 hover:text-white transition-colors duration-200 flex items-center gap-2">
             <svg
               id="fi_2099100"
               enable-background="new 0 0 511.998 511.998"
@@ -91,18 +91,38 @@ const contactInfo = {
             </svg>
             <span class="text-background">{contactInfo.email}</span>
           </a>
-        </div>
-        <div class="flex items-center justify-center space-x-3 mt-4">
-          <SocialIcons />
+          <div class="flex items-center gap-2">
+            <div>
+              <svg
+                id="fi_2838912"
+                enable-background="new 0 0 512 512"
+                height="512"
+                viewBox="0 0 512 512"
+                width="512"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                class="w-6 h-6 text-secondary">
+                <g>
+                  <path
+                    d="m243.519 505.32c2.782 4.173 7.466 6.68 12.481 6.68s9.699-2.506 12.481-6.68c35.499-53.247 87.786-119.008 124.222-185.889 29.134-53.476 43.297-99.085 43.297-139.431 0-99.252-80.748-180-180-180s-180 80.748-180 180c0 40.346 14.163 85.955 43.297 139.431 36.409 66.83 88.796 132.752 124.222 185.889zm12.481-475.32c82.71 0 150 67.29 150 150 0 35.204-12.967 76.118-39.641 125.079-31.407 57.649-76.225 116.128-110.359 165.29-34.129-49.155-78.95-107.638-110.359-165.29-26.674-48.961-39.641-89.875-39.641-125.079 0-82.71 67.29-150 150-150z">
+                  </path><path
+                    d="m256 270c49.626 0 90-40.374 90-90s-40.374-90-90-90-90 40.374-90 90 40.374 90 90 90zm0-150c33.084 0 60 26.916 60 60s-26.916 60-60 60-60-26.916-60-60 26.916-60 60-60z">
+                  </path>
+                </g>
+              </svg>
+            </div>
+            <div>
+              <p class="text-md text-background">Kralja Petra Prvog br. 2, Smederevo</p>
+            </div>
+          </div>
         </div>
       </div>
       <div class="text-right">
-        <h3 class="text-xl font-main font-semibold text-background mb-4 uppercase">Pravne informacije</h3>
+        <h3 class="text-xl font-main font-semibold text-background mb-4 uppercase">Ostale informacije</h3>
         <ul class="text-background text-l leading-relaxed max-w-md">
           <li><span class="font-bold">PIB:</span> 112345678</li>
-          <li><span class="font-bold">MATIČNI BROJ:</span> 65432100</li>
-          <li><span class="font-bold">BROJ RAČUNA:</span> 160-123456-78</li>
-          <li><span class="font-bold">MESTO:</span> Smederevo</li>
+          <li><span class="font-bold">Matični broj:</span> 65432100</li>
+          <li><span class="font-bold">Broj računa:</span> 160-123456-78</li>
         </ul>
       </div>
 
@@ -190,20 +210,40 @@ const contactInfo = {
             </svg>
             <span class="text-background">{contactInfo.email}</span>
           </a>
-        </div>
-        <div class="flex items-center justify-center space-x-3 mt-3">
-          <SocialIcons />
+          <div class="flex items-center gap-2 justify-center">
+            <div>
+              <svg
+                id="fi_2838912"
+                enable-background="new 0 0 512 512"
+                height="512"
+                viewBox="0 0 512 512"
+                width="512"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                class="w-6 h-6 text-secondary">
+                <g>
+                  <path
+                    d="m243.519 505.32c2.782 4.173 7.466 6.68 12.481 6.68s9.699-2.506 12.481-6.68c35.499-53.247 87.786-119.008 124.222-185.889 29.134-53.476 43.297-99.085 43.297-139.431 0-99.252-80.748-180-180-180s-180 80.748-180 180c0 40.346 14.163 85.955 43.297 139.431 36.409 66.83 88.796 132.752 124.222 185.889zm12.481-475.32c82.71 0 150 67.29 150 150 0 35.204-12.967 76.118-39.641 125.079-31.407 57.649-76.225 116.128-110.359 165.29-34.129-49.155-78.95-107.638-110.359-165.29-26.674-48.961-39.641-89.875-39.641-125.079 0-82.71 67.29-150 150-150z">
+                  </path><path
+                    d="m256 270c49.626 0 90-40.374 90-90s-40.374-90-90-90-90 40.374-90 90 40.374 90 90 90zm0-150c33.084 0 60 26.916 60 60s-26.916 60-60 60-60-26.916-60-60 26.916-60 60-60z">
+                  </path>
+                </g>
+              </svg>
+            </div>
+            <div>
+              <p class="text-md text-background">Kralja Petra Prvog br. 2, Smederevo</p>
+            </div>
+          </div>
         </div>
       </div>
 
       <!-- Legal Information Section -->
       <div class="flex flex-col items-center mb-12">
-        <h3 class="text-xl font-main font-semibold text-background uppercase mb-2">Pravne informacije</h3>
+        <h3 class="text-xl font-main font-semibold text-background uppercase mb-2">Ostale informacije</h3>
         <ul class="text-background text-base leading-relaxed text-center">
           <li><span class="font-bold">PIB:</span> 112345678</li>
-          <li><span class="font-bold">MATIČNI BROJ:</span> 65432100</li>
-          <li><span class="font-bold">BROJ RAČUNA:</span> 160-123456-78</li>
-          <li><span class="font-bold">MESTO:</span> Smederevo</li>
+          <li><span class="font-bold">Matični broj:</span> 65432100</li>
+          <li><span class="font-bold">Broj računa:</span> 160-123456-78</li>
         </ul>
       </div>
     </div>

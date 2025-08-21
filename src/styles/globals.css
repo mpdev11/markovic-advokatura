@@ -26,7 +26,7 @@
 }
 
 .subheading {
-  @apply text-lg font-bold leading-7 text-secondary uppercase tracking-wider;
+  @apply text-lg font-semibold leading-7 text-secondary uppercase tracking-wider;
 }
 
 .service-heading {
@@ -40,4 +40,8 @@ header.bg-transparent .hamburger-icon {
 
 .prose li::marker {
   @apply !text-primary;
+}
+
+.section-heading {
+  @apply mt-2 text-2xl font-bold tracking-wide text-gray-900 sm:text-4xl !leading-[2.6rem];
 }
