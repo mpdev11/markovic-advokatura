@@ -1,5 +1,6 @@
 ---
 import portrait from "../../assets/images/portrait.jpg";
+import { Image } from "astro:assets";
 
 const basePath = import.meta.env.BASE_URL;
 ---
@@ -128,7 +129,7 @@ const basePath = import.meta.env.BASE_URL;
       <div class="relative">
         <div class="relative overflow-hidden rounded-lg shadow-2xl">
           <!-- Portrait image -->
-          <img src={portrait.src} alt="Advokat Marković" class="w-full h-[600px] object-cover relative z-10" />
+          <Image src={portrait} alt="Advokat Marković" class="w-full h-[600px] object-cover relative z-10" />
           <div class="absolute bottom-6 left-6 bg-white/95 backdrop-blur-sm rounded-lg px-4 py-2 shadow-lg">
             <p class="text-sm font-semibold text-gray-900">15+ godina iskustva</p>
           </div>

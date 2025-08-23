@@ -1,12 +1,13 @@
 ---
 import heroBg from "../../assets/images/hero-bg.jpg";
+import { Image } from "astro:assets";
 ---
 
 <div class="relative min-h-[600px] lg:min-h-[900px]">
   {/* Background image container */}
   <div class="absolute inset-0 z-0">
     <div class="absolute inset-0 bg-gradient-to-r from-black/90 to-black/10"></div>
-    <img src={heroBg.src} alt="Background" class="h-full w-full object-cover" />
+    <Image src={heroBg} alt="Background" class="h-full w-full object-cover" />
   </div>
 
   {/* Content */}
