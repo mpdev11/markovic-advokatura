@@ -1,46 +1,158 @@
 ---
 import PageLayout from "../layouts/PageLayout.astro";
 import signature from "../assets/images/signature.png";
+import portrait from "../assets/images/portrait.jpg";
+import { Image } from "astro:assets";
 ---
 
 <PageLayout
   title="O meni | Marković Advokatura"
   description="Advokat Miodrag Marković, advokat sa dugogodišnjom praksom, pruža profesionalne advokatske usluge na teritoriji Republike Srbije.">
-  <section class="pt-32 pb-16 lg:pt-44 lg:pb-20">
+  <section class="pt-32 pb-16 lg:pt-44 lg:pb-24">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
-      <div class="mx-auto max-w-4xl border-b border-primary/30 mb-6 pb-6">
-        <h1 class="service-heading !normal-case">Adv. Miodrag Marković - moja misija i vizija</h1>
-      </div>
-      <div class="mx-auto max-w-4xl">
-        <div class="prose prose-lg max-w-full">
-          <p>
-            Rođen sam 1994. godine u Smederevu, gde sam završio OŠ „Dr Jovan Cvijić”, kao i Gimnaziju. Pravni fakultet Univerziteta u Beogradu upisao
-            sam vođen željom da bavljenje pravnom naukom ne bude samo profesija, već i moj lični doprinos društvu kojem pripadam. Tokom osnovnih
-            studija, a potom i master studija na smeru pravo intelektualne svojine, razvio sam posvećenost i odgovornost prema pravnom pozivu koji
-            zahteva ne samo znanje, već i moralni integritet.
-          </p>
+      {/* Hero Section with Portrait */}
+      <div class="mx-auto max-w-6xl">
+        <div class="grid lg:grid-cols-5 gap-12 lg:gap-16 items-center mb-20">
+          {/* Portrait */}
+          <div class="lg:col-span-2 flex justify-center lg:justify-start">
+            <div class="relative group">
+              <Image
+                src={portrait}
+                alt="Advokat Miodrag Marković"
+                class="relative rounded-2xl w-full max-w-sm"
+                widths={[400, 600, 800]}
+                format="webp"
+                quality={80}
+                loading="eager"
+                inferSize
+              />
+            </div>
+          </div>
 
-          <p>
-            Nakon završenih osnovnih i master akademskih studija, pripravnički staž obavljam u Beogradu i posle polaganja pravosudnog i advokatskog
-            ispita, upisujem se u Imenik advokata Advokatske komore Požarevca. Pored toga, posedujem sertifikat o stečenim posebnim znanjima iz
-            oblasti prava deteta i prestupništva mladih, zbog čega sam ovlašćen da postupam kao branilac odnosno zastupnik maloletnih učinioca
-            krivičnih dela i maloletnih oštećenih lica. Takođe, registrovan sam i kao profesionalni korisnik eKatastra što značajno ubrzava postupke u
-            vezi sa prometom, upisom i zaštitom prava na nepokretnostima.
-          </p>
+          {/* Intro Text */}
+          <div class="lg:col-span-3 space-y-6">
+            <div>
+              <h1 class="text-4xl lg:text-5xl font-bold mb-4 leading-tight text-gray-900">Adv. Miodrag Marković</h1>
+              <p class="text-xl text-gray-700 italic border-l-4 border-secondary pl-2">"Poverenje se ne dobija rečima, već se zaslužuje delima."</p>
+            </div>
 
-          <p>
-            U skladu sa svojim kućnim vaspitanjem, moralnim ubeđenjima i pravnim obrazovanjem, smatram da advokatura nije samo zaštita pojedinaca, već
-            i odbrana vrednosti na kojima jedno društvo počiva. Samim tim, moje lično i profesionalno opredeljenje je da u vremenu u kojem je glas
-            razuma sve potrebniji, moje delovanje bude odgovorno, stručno, savesno, transparentno, pravovremeno i pošteno.
-          </p>
+            <p class="text-lg text-gray-700 leading-relaxed">
+              Advokat sa dugogodišnjom praksom, fokusiran na pružanje stručne pravne pomoći i savetovanja, sa posebnim akcentom na potrebe klijenata i
+              zaštitu njihovih interesa.
+            </p>
 
-          <p>
-            Verujem da se kvalitet pravnog zastupanja ne meri samo stručnošću, već i odnosom koji se gradi sa klijentom. Zbog toga se uvek zalažem da
-            sa svojim klijentima ostvarim odnos poverenja, jer smatram da samo tako možemo doći do željenih rezultata. Sa druge strane, svestan sam da
-            se poverenje ne dobija rečima, već da se zaslužuje delima.
-          </p>
+            {/* Quick Facts */}
+            <div class="grid sm:grid-cols-2 gap-6 pt-4">
+              <div class="bg-primary/5 rounded-lg p-4 border shadow-[0_3px_15px_rgb(0,0,0,0.1)]">
+                <p class="font-semibold text-gray-900 mb-1">Obrazovanje</p>
+                <p class="text-sm text-gray-600">Master pravo intelektualne svojine</p>
+              </div>
+              <div class="bg-primary/5 rounded-lg p-4 border shadow-[0_3px_15px_rgb(0,0,0,0.1)]">
+                <p class="font-semibold text-gray-900 mb-1">Komora</p>
+                <p class="text-sm text-gray-600">Advokatska komora Požarevca</p>
+              </div>
+            </div>
+          </div>
         </div>
-        <img src={signature.src} alt="Signature" class="w-56 ml-auto" />
+
+        {/* Main Content */}
+        <div class="space-y-12">
+          {/* Background Section */}
+          <div class="bg-background rounded-2xl p-8 lg:p-12 shadow-[0_3px_15px_rgb(0,0,0,0.1)]">
+            <h2 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-6 pb-3 border-b border-primary/20">Moja priča</h2>
+            <div class="space-y-5 text-gray-700 leading-relaxed text-lg">
+              <p>
+                Rođen sam 1994. godine u Smederevu, gde sam završio OŠ „Dr Jovan Cvijić", kao i Gimnaziju. Pravni fakultet Univerziteta u Beogradu
+                upisao sam vođen željom da bavljenje pravnom naukom ne bude samo profesija, već i moj lični doprinos društvu kojem pripadam. Tokom
+                osnovnih studija, a potom i master studija na smeru pravo intelektualne svojine, razvio sam posvećenost i odgovornost prema pravnom
+                pozivu koji zahteva ne samo znanje, već i moralni integritet.
+              </p>
+            </div>
+          </div>
+
+          {/* Qualifications Section */}
+          <div class="bg-primary/5 rounded-2xl p-8 lg:p-12 shadow-[0_3px_15px_rgb(0,0,0,0.1)]">
+            <h2 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-6 pb-3 border-b border-primary/30">Kvalifikacije i ovlašćenja</h2>
+            <div class="space-y-5 text-gray-700 leading-relaxed text-lg">
+              <p>
+                Nakon završenih osnovnih i master akademskih studija, pripravnički staž obavljam u Beogradu i posle polaganja pravosudnog i
+                advokatskog ispita, upisujem se u Imenik advokata Advokatske komore Požarevca.
+              </p>
+
+              {/* Certifications Grid */}
+              <div class="grid md:grid-cols-2 gap-4 pt-4">
+                <div class="bg-white rounded-lg p-5 border border-primary/20 shadow-sm">
+                  <div class="flex items-start gap-3">
+                    <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                      <svg class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z">
+                        </path>
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 class="font-semibold text-gray-900 mb-1">Pravo deteta i prestupništvo mladih</h3>
+                      <p class="text-sm text-gray-600">Ovlašćen za postupanje kao branilac i zastupnik maloletnih učinilaca i oštećenih lica</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="bg-white rounded-lg p-5 border border-primary/20 shadow-sm">
+                  <div class="flex items-start gap-3">
+                    <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                      <svg class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z">
+                        </path>
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 class="font-semibold text-gray-900 mb-1">Profesionalni korisnik eKatastra</h3>
+                      <p class="text-sm text-gray-600">Ubrzano procesiranje postupaka vezanih za nepokretnosti</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Philosophy Section */}
+          <div class="bg-background rounded-2xl p-8 lg:p-12 shadow-[0_3px_15px_rgb(0,0,0,0.1)]">
+            <h2 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-6 pb-3 border-b border-primary/20">Moja filozofija</h2>
+            <div class="space-y-5 text-gray-700 leading-relaxed text-lg">
+              <p>
+                U skladu sa svojim kućnim vaspitanjem, moralnim ubeđenjima i pravnim obrazovanjem, smatram da advokatura nije samo zaštita pojedinaca,
+                već i odbrana vrednosti na kojima jedno društvo počiva. Samim tim, moje lično i profesionalno opredeljenje je da u vremenu u kojem je
+                glas razuma sve potrebniji, moje delovanje bude odgovorno, stručno, savesno, transparentno, pravovremeno i pošteno.
+              </p>
+
+              {/* Core Values */}
+              <div class="grid sm:grid-cols-3 gap-4 pt-4">
+                <div class="text-center p-4 bg-primary/5 rounded-lg border border-primary/10">
+                  <div class="text-3xl font-bold text-primary mb-1">Stručnost</div>
+                  <div class="text-sm text-gray-600">Profesionalizam u svakom slučaju</div>
+                </div>
+                <div class="text-center p-4 bg-primary/5 rounded-lg border border-primary/10">
+                  <div class="text-3xl font-bold text-primary mb-1">Integritet</div>
+                  <div class="text-sm text-gray-600">Moralni i profesionalni</div>
+                </div>
+                <div class="text-center p-4 bg-primary/5 rounded-lg border border-primary/10">
+                  <div class="text-3xl font-bold text-primary mb-1">Poverenje</div>
+                  <div class="text-sm text-gray-600">Zasluženo delima</div>
+                </div>
+              </div>
+
+              <p>
+                Verujem da se kvalitet pravnog zastupanja ne meri samo stručnošću, već i odnosom koji se gradi sa klijentom. Zbog toga se uvek zalažem
+                da sa svojim klijentima ostvarim odnos poverenja, jer smatram da samo tako možemo doći do željenih rezultata. Sa druge strane, svestan
+                sam da se poverenje ne dobija rečima, već da se zaslužuje delima.
+              </p>
+            </div>
+
+            {/* Signature */}
+            <div class="mt-8 pt-8 border-t border-gray-200 flex justify-end">
+              <img src={signature.src} alt="Potpis Advokata Miodraga Markovića" class="w-48 lg:w-56 opacity-80" />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>

@@ -21,7 +21,7 @@ const contactInfo = {
         </a>
       </div>
       <div class="flex flex-col items-center justify-center">
-        <div class="text-base flex flex-col items-center justify-center gap-3 text-gray-400">
+        <div class="text-base flex flex-col items-center justify-center gap-4 text-gray-400">
           <h3 class="text-xl font-main font-semibold text-background mb-4 uppercase">Kontakt</h3>
           <a
             href={`tel:${contactInfo.phone}`}
@@ -37,7 +37,7 @@ const contactInfo = {
               style="enable-background:new 0 0 473.806 473.806;"
               xml:space="preserve"
               fill="currentColor"
-              class="w-6 h-6 text-secondary">
+              class="w-6 h-6 text-secondary mt-[3px]">
               <g>
                 <g>
                   <path
@@ -84,7 +84,7 @@ const contactInfo = {
               width="512"
               xmlns="http://www.w3.org/2000/svg"
               fill="currentColor"
-              class="w-6 h-6 text-secondary">
+              class="w-6 h-6 text-secondary mt-[5px]">
               <path
                 d="m511.998 111.383c0-25.98-21.137-47.117-47.117-47.117h-417.764c-25.975.001-47.108 21.128-47.117 47.125v.008 289.199c0 26.305 21.352 47.133 47.133 47.133h417.731c26.304 0 47.133-21.351 47.133-47.133v-289.199c0-.002 0-.004 0-.006.001-.003.001-.006.001-.01zm-464.881-17.116h417.764c9.438 0 17.117 7.679 17.117 17.141 0 5.028-2.499 9.695-6.689 12.487l-209.805 139.876c-5.773 3.849-13.235 3.85-19.009 0 0 0-209.81-139.879-209.806-139.876.001.001-.003-.002-.004-.003-4.186-2.789-6.685-7.456-6.685-12.509 0-9.438 7.679-17.116 17.117-17.116zm417.748 323.464h-417.732c-9.339 0-17.133-7.551-17.133-17.133v-245.106l199.853 133.239c7.942 5.295 17.044 7.942 26.146 7.942 9.103 0 18.206-2.647 26.147-7.942l199.852-133.239v245.107c0 9.338-7.551 17.132-17.133 17.132z">
               </path>
@@ -101,7 +101,7 @@ const contactInfo = {
                 width="512"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
-                class="w-6 h-6 text-secondary">
+                class="w-6 h-6 text-secondary mt-[5px]">
                 <g>
                   <path
                     d="m243.519 505.32c2.782 4.173 7.466 6.68 12.481 6.68s9.699-2.506 12.481-6.68c35.499-53.247 87.786-119.008 124.222-185.889 29.134-53.476 43.297-99.085 43.297-139.431 0-99.252-80.748-180-180-180s-180 80.748-180 180c0 40.346 14.163 85.955 43.297 139.431 36.409 66.83 88.796 132.752 124.222 185.889zm12.481-475.32c82.71 0 150 67.29 150 150 0 35.204-12.967 76.118-39.641 125.079-31.407 57.649-76.225 116.128-110.359 165.29-34.129-49.155-78.95-107.638-110.359-165.29-26.674-48.961-39.641-89.875-39.641-125.079 0-82.71 67.29-150 150-150z">
@@ -121,13 +121,12 @@ const contactInfo = {
       </div>
       <div class="text-right">
         <h3 class="text-xl font-main font-semibold text-background mb-4 uppercase">Ostale informacije</h3>
-        <ul class="text-background text-l leading-relaxed max-w-md">
+        <ul class="text-background text-l leading-relaxed max-w-md flex flex-col gap-1">
           <li><span class="font-bold">PIB:</span> 112345678</li>
           <li><span class="font-bold">Matični broj:</span> 65432100</li>
           <li><span class="font-bold">Broj računa:</span> 160-123456-78</li>
         </ul>
       </div>
-
       <!-- Contact Section -->
     </div>
 
@@ -141,7 +140,7 @@ const contactInfo = {
       </div>
 
       <!-- Contact Section -->
-      <div class="flex flex-col items-center mb-12">
+      <div class="flex flex-col gap-3 items-center mb-12">
         <h3 class="text-xl font-main font-semibold text-background uppercase mb-2">Kontakt</h3>
         <div class="text-base flex flex-col gap-3 text-gray-400 text-center">
           <a
@@ -243,8 +242,8 @@ const contactInfo = {
 
       <!-- Legal Information Section -->
       <div class="flex flex-col items-center mb-12">
-        <h3 class="text-xl font-main font-semibold text-background uppercase mb-2">Ostale informacije</h3>
-        <ul class="text-background text-base leading-relaxed text-center">
+        <h3 class="text-xl font-main font-semibold text-background uppercase mb-4">Ostale informacije</h3>
+        <ul class="text-background text-base leading-relaxed text-center gap-3 flex flex-col">
           <li><span class="font-bold">PIB:</span> 112345678</li>
           <li><span class="font-bold">Matični broj:</span> 65432100</li>
           <li><span class="font-bold">Broj računa:</span> 160-123456-78</li>
@@ -253,10 +252,10 @@ const contactInfo = {
     </div>
 
     <!-- Legal Notice -->
-    <div class="border-t border-background/30 pt-8">
-      <div class="text-center text-sm text-gray-100">
+    <div class="border-t border-background/30 pt-8 lg:pr-14 flex justify-center">
+      <p class="text-sm text-gray-100">
         © {currentYear} Marković Advokatura. Sva prava zadržana.
-      </div>
+      </p>
     </div>
   </div>
 </footer>
