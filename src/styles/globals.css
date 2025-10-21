@@ -38,6 +38,14 @@ header.bg-transparent .hamburger-icon {
   @apply text-background;
 }
 
+header.bg-transparent .primary-navigation > a::after {
+  @apply bg-background;
+}
+
+header.bg-white .primary-navigation > a::after {
+  @apply bg-gray-900;
+}
+
 .prose li::marker {
   @apply !text-primary;
 }
