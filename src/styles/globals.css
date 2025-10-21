@@ -57,3 +57,30 @@ header.bg-transparent .hamburger-icon {
 .section-heading {
   @apply mt-2 text-3xl sm:text-4xl font-bold tracking-wide text-gray-900 lg:!leading-[2.6rem];
 }
+
+/* View Transitions - Subtle Fade Effect */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.2s;
+  animation-timing-function: ease-in-out;
+}
+
+::view-transition-old(root) {
+  animation-name: fade-out;
+}
+
+::view-transition-new(root) {
+  animation-name: fade-in;
+}
+
+@keyframes fade-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}

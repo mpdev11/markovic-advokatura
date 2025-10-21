@@ -5,15 +5,11 @@ import portrait from "../assets/images/portrait.jpg";
 import { Image } from "astro:assets";
 ---
 
-<PageLayout
-  title="O meni | Marković Advokatura"
-  description="Advokat Miodrag Marković, advokat sa dugogodišnjom praksom, pruža profesionalne advokatske usluge na teritoriji Republike Srbije.">
+<PageLayout title="O meni | Marković Advokatura" description="Advokat u usponu – Poverenje, znanje i profesionalizam u svakom slučaju">
   <section class="pt-32 pb-16 lg:pt-44 lg:pb-24">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
-      {/* Hero Section with Portrait */}
-      <div class="mx-auto max-w-6xl">
+      <div class="mx-auto max-w-7xl">
         <div class="grid lg:grid-cols-5 gap-12 lg:gap-16 items-center mb-20">
-          {/* Portrait */}
           <div class="lg:col-span-2 flex justify-center lg:justify-start">
             <div class="relative group">
               <Image
@@ -29,7 +25,6 @@ import { Image } from "astro:assets";
             </div>
           </div>
 
-          {/* Intro Text */}
           <div class="lg:col-span-3 space-y-6">
             <div>
               <h1 class="text-4xl lg:text-5xl font-bold mb-4 leading-tight text-gray-900">Adv. Miodrag Marković</h1>
@@ -37,27 +32,26 @@ import { Image } from "astro:assets";
             </div>
 
             <p class="text-lg text-gray-700 leading-relaxed">
-              Advokat sa dugogodišnjom praksom, fokusiran na pružanje stručne pravne pomoći i savetovanja, sa posebnim akcentom na potrebe klijenata i
-              zaštitu njihovih interesa.
+              Kao advokat u usponu, gradim praksu na temelju poverenja, znanja I stalnog napretka. Svaki klijent je prilika da pokažem posvećenost,
+              integritet i profesionalazim.
             </p>
 
-            {/* Quick Facts */}
             <div class="grid sm:grid-cols-2 gap-6 pt-4">
               <div class="bg-primary/5 rounded-lg p-4 border shadow-[0_3px_15px_rgb(0,0,0,0.1)]">
                 <p class="font-semibold text-gray-900 mb-1">Obrazovanje</p>
+                <p class="text-sm text-gray-600">Osnovne akademske studije</p>
                 <p class="text-sm text-gray-600">Master pravo intelektualne svojine</p>
               </div>
               <div class="bg-primary/5 rounded-lg p-4 border shadow-[0_3px_15px_rgb(0,0,0,0.1)]">
-                <p class="font-semibold text-gray-900 mb-1">Komora</p>
+                <p class="font-semibold text-gray-900 mb-1">Članstvo</p>
+                <p class="text-sm text-gray-600">Advokatska komora Srbije</p>
                 <p class="text-sm text-gray-600">Advokatska komora Požarevca</p>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Main Content */}
         <div class="space-y-12">
-          {/* Background Section */}
           <div class="bg-background rounded-2xl p-8 lg:p-12 shadow-[0_3px_15px_rgb(0,0,0,0.1)]">
             <h2 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-6 pb-3 border-b border-primary/20">Moja priča</h2>
             <div class="space-y-5 text-gray-700 leading-relaxed text-lg">
@@ -70,7 +64,6 @@ import { Image } from "astro:assets";
             </div>
           </div>
 
-          {/* Qualifications Section */}
           <div class="bg-primary/5 rounded-2xl p-8 lg:p-12 shadow-[0_3px_15px_rgb(0,0,0,0.1)]">
             <h2 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-6 pb-3 border-b border-primary/30">Kvalifikacije i ovlašćenja</h2>
             <div class="space-y-5 text-gray-700 leading-relaxed text-lg">
@@ -79,7 +72,6 @@ import { Image } from "astro:assets";
                 advokatskog ispita, upisujem se u Imenik advokata Advokatske komore Požarevca.
               </p>
 
-              {/* Certifications Grid */}
               <div class="grid md:grid-cols-2 gap-4 pt-4">
                 <div class="bg-white rounded-lg p-5 border border-primary/20 shadow-sm">
                   <div class="flex items-start gap-3">
@@ -114,7 +106,6 @@ import { Image } from "astro:assets";
             </div>
           </div>
 
-          {/* Philosophy Section */}
           <div class="bg-background rounded-2xl p-8 lg:p-12 shadow-[0_3px_15px_rgb(0,0,0,0.1)]">
             <h2 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-6 pb-3 border-b border-primary/20">Moja filozofija</h2>
             <div class="space-y-5 text-gray-700 leading-relaxed text-lg">
@@ -124,7 +115,6 @@ import { Image } from "astro:assets";
                 glas razuma sve potrebniji, moje delovanje bude odgovorno, stručno, savesno, transparentno, pravovremeno i pošteno.
               </p>
 
-              {/* Core Values */}
               <div class="grid sm:grid-cols-3 gap-4 pt-4">
                 <div class="text-center p-4 bg-primary/5 rounded-lg border border-primary/10">
                   <div class="text-3xl font-bold text-primary mb-1">Stručnost</div>
@@ -147,9 +137,16 @@ import { Image } from "astro:assets";
               </p>
             </div>
 
-            {/* Signature */}
             <div class="mt-8 pt-8 border-t border-gray-200 flex justify-end">
-              <img src={signature.src} alt="Potpis Advokata Miodraga Markovića" class="w-48 lg:w-56 opacity-80" />
+              <Image
+                src={signature}
+                alt="Potpis Advokata Miodraga Markovića"
+                class="w-48 lg:w-56 opacity-80"
+                widths={[192, 384, 448, 576]}
+                format="webp"
+                quality={90}
+                inferSize
+              />
             </div>
           </div>
         </div>

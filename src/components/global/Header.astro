@@ -14,7 +14,7 @@ const basePath = import.meta.env.BASE_URL;
     </div>
     <div class="flex lg:hidden">
       <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5" id="mobile-menu-button">
-        <span class="sr-only">Open main menu</span>
+        <span class="sr-only">Otvori mobilni meni</span>
         <svg
           class="hamburger-icon size-10 text-gray-900"
           fill="none"
@@ -34,7 +34,7 @@ const basePath = import.meta.env.BASE_URL;
             <a href={`${basePath}${item.path}`} class="text-lg/6 font-semibold flex items-center gap-1 justify-center text-gray-900">
               {item.label}
               {item.children && (
-                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                <svg class="w-4 h-4 mt-[4px]" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                 </svg>
               )}
@@ -155,7 +155,7 @@ const basePath = import.meta.env.BASE_URL;
 </header>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
+  function initHeader() {
     const isHomePage =
       window.location.pathname === import.meta.env.BASE_URL ||
       window.location.pathname === import.meta.env.BASE_URL.replace(/\/$/, "") ||
@@ -163,11 +163,19 @@ const basePath = import.meta.env.BASE_URL;
 
     const header = document.getElementById("header");
 
+    // Remove any existing scroll listeners to avoid duplicates
+    const existingHandler = (window as any).__headerScrollHandler;
+    if (existingHandler) {
+      window.removeEventListener("scroll", existingHandler);
+    }
+
     if (isHomePage && header) {
+      header.classList.remove("bg-white", "shadow-md");
       header.classList.add("bg-transparent", "shadow-none");
 
       // Function to handle scroll
       function handleScroll() {
+        if (!header) return;
         if (window.scrollY > 50) {
           header.classList.remove("bg-transparent", "shadow-none");
           header.classList.add("bg-white", "shadow-md");
@@ -177,10 +185,13 @@ const basePath = import.meta.env.BASE_URL;
         }
       }
 
+      // Store the handler reference for cleanup
+      (window as any).__headerScrollHandler = handleScroll;
       window.addEventListener("scroll", handleScroll);
 
       handleScroll();
     } else if (header) {
+      header.classList.remove("bg-transparent", "shadow-none");
       header.classList.add("bg-white", "shadow-md");
     }
 
@@ -271,5 +282,7 @@ const basePath = import.meta.env.BASE_URL;
         }
       });
     });
-  });
+  }
+
+  document.addEventListener("astro:page-load", initHeader);
 </script>
