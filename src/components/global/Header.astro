@@ -3,6 +3,7 @@ import { navigation } from "../../data/navigation";
 import logo from "../../assets/images/logo.svg";
 
 const basePath = import.meta.env.BASE_URL;
+const currentPath = Astro.url.pathname;
 ---
 
 <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="header">
@@ -29,34 +30,41 @@ const basePath = import.meta.env.BASE_URL;
     </div>
     <div class="hidden lg:flex lg:gap-x-12">
       {
-        navigation.map((item) => (
-          <div class="relative group primary-navigation">
-            <a href={`${basePath}${item.path}`} class="text-lg/6 font-semibold flex items-center gap-1 justify-center text-gray-900">
-              {item.label}
+        navigation.map((item) => {
+          const itemFullPath = `${basePath}${item.path}`.replace(/\/+/g, "/");
+          const isActive = currentPath === itemFullPath || (item.path !== "/" && currentPath.startsWith(itemFullPath));
+
+          return (
+            <div class="relative group primary-navigation">
+              <a
+                href={`${basePath}${item.path}`}
+                class={`text-lg/6 font-semibold flex items-center gap-1 justify-center text-gray-900 ${!item.children ? `relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-current ${isActive ? "after:scale-x-100" : "after:scale-x-0 hover:after:scale-x-100"} after:transition-transform after:duration-300 after:origin-center pb-1` : ""}`}>
+                {item.label}
+                {item.children && (
+                  <svg class="w-4 h-4 mt-[4px]" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                  </svg>
+                )}
+              </a>
               {item.children && (
-                <svg class="w-4 h-4 mt-[4px]" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-                </svg>
-              )}
-            </a>
-            {item.children && (
-              <div
-                class="absolute left-0 top-full w-max bg-white rounded-md shadow-lg 
+                <div
+                  class="absolute left-0 top-full w-max bg-white rounded-md shadow-lg 
                 opacity-0 invisible group-hover:opacity-100 group-hover:visible
                 transition-all duration-200 transform origin-top-left 
                 scale-95 group-hover:scale-100 overflow-hidden">
-                {item.children.map((child, index) => (
-                  <a
-                    href={`${basePath}${child.path}`}
-                    class="block p-2 text-sm hover:bg-gray-100 hover:text-gray-700 flex items-center gap-2 border-b border-gray-200 last:border-b-0 first:rounded-t-md last:rounded-b-md text-lg">
-                    <div class="text-primary flex-shrink-0 flex items-center justify-center [&>svg]:w-7 [&>svg]:h-7" set:html={child.icon} />
-                    {child.label}
-                  </a>
-                ))}
-              </div>
-            )}
-          </div>
-        ))
+                  {item.children.map((child, index) => (
+                    <a
+                      href={`${basePath}${child.path}`}
+                      class="block p-2 text-sm hover:bg-gray-100 hover:text-gray-700 flex items-center gap-2 border-b border-gray-200 last:border-b-0 first:rounded-t-md last:rounded-b-md text-lg">
+                      <div class="text-primary flex-shrink-0 flex items-center justify-center [&>svg]:w-7 [&>svg]:h-7" set:html={child.icon} />
+                      {child.label}
+                    </a>
+                  ))}
+                </div>
+              )}
+            </div>
+          );
+        })
       }
     </div>
     <div class="hidden lg:flex lg:flex-1 lg:justify-end">
