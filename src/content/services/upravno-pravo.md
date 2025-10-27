@@ -1,6 +1,6 @@
 ---
 title: "Upravno pravo"
-description: "Zastupanje u upravnim sporovima, žalbama i drugim upravnim postupcima"
+description: "Zastupanje u postupcima i sporovima pred državnim organima."
 ---
 
 Najprostije rečeno, upravno pravo reguliše odnose između građana i državne uprave. Poslove državne uprave obavljaju ministarstva, organi uprave u sastavu ministarstava (uprave, inspektorati, direkcije), ali se mogu obrazovati i posebne organizacije (sekretarijati, zavodi, javne agencije itd.), javne službe (javne ustanove i javna preduzeća), kao i drugi oblici organizovanja državne uprave pred kojima se ostvaruju prava i potrebe građana i pravnih lica.

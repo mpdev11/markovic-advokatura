@@ -1,6 +1,6 @@
 ---
 title: "Poresko pravo"
-description: "Pravno savetovanje u poreskim pitanjima, zastupanje u poreskim postupcima i sporovima"
+description: "Pravno savetovanje i zastupanje u poreskim postupcima i sporovima."
 ---
 
 Poresko pravo obuhvata pravne norme koje uređuju sistem javnih prihoda odnosno utvrđivanje, obračunavanje, plaćanje i kontrolu poreza, doprinosa i drugih dažbina koje fizička i pravna lica duguju državi.

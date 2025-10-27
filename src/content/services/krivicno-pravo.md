@@ -1,6 +1,6 @@
 ---
 title: "Krivično pravo i ostali kazneni postupci"
-description: "Profesionalna odbrana i zastupanje u krivičnim postupcima, zaštita prava i interesa klijenata"
+description: "Profesionalna odbrana i zastupanje u krivičnim i ostalim kaznenim postupcima."
 ---
 
 Kada se suočite sa optužbama, bilo da se one odnose na krivična dela, prekršaje ili privredne prestupe, od izuzetnog značaja je da advokat-branilac bude angažovan još od najranije faze konkretnog postupka.

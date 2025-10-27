@@ -1,6 +1,6 @@
 ---
 title: "Imovinsko pravo"
-description: "Rešavanje imovinskih sporova, promet nepokretnosti i zaštita imovinskih prava"
+description: "Zaštita Vaših imovinskih interesa i rešavanje imovinskih sporova."
 ---
 
 U pravnom smislu, imovina predstavlja ukupnost imovinskih prava i obaveza koje pripadaju jednom pravnom subjektu (fizičkom ili pravnom licu) i kojа se mogu novčano izraziti. Ona obuhvata aktivu – subjektivna imovinska prava (pravo svojine, novčana potraživanja, udele ili akcije u pravnim licima, autorska prava itd.) i pasivu – imovinske obaveze prema trećim licima.

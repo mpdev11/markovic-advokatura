@@ -1,6 +1,6 @@
 ---
 title: "Nekretnine"
-description: "Pravno savetovanje i zastupanje u poslovima sa nekretninama"
+description: "Pravno savetovanje i zastupanje u postupcima i poslovima koji se odnose na nekretnine."
 ---
 
 Kao profesionalni korisnik usluga eKatastra rešavam sva sporna pravna pitanja u vezi sa vašim nepokretnostima, jer bilo da kupujete, prodajete ili ulažete u određenu nekretninu, pred vama je često zahtevan proces za koji je neophodna pažljiva procena i dobra priprema.

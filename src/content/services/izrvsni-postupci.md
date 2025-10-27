@@ -1,6 +1,6 @@
 ---
 title: "Izvršni postupci"
-description: "Zastupanje u izvršnim postupcima i zaštita od izvršenja"
+description: "Efikasna naplata potraživanja i zaštita od neosnovane prinude."
 ---
 
 Izvršni postupak je pravni mehanizam kojim se obezbeđuje prinudno ostvarenje novčanog potraživanja ili ispunjenje druge nenovčane obaveze onda kada dužnik to ne učini dobrovoljno. On se pokreće na osnovu izvršne ili verodostojne isprave (npr. sudska presuda, javna isprava, menica, faktura itd.) i sprovodi se preko suda ili javnog izvršitelja. U ovoj pravnoj oblasti, vodim postupak od početka do kraja, bilo da je reč o naplati duga, iseljenju, vraćanju u posed ili obustavi nezakonite prinude. Zastupanje se odnosi kako na poverioce, tako i na dužnike, pa se advokatske usluge koje preduzimam mogu klasifikovati na sledeći način:

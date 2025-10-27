@@ -1,6 +1,6 @@
 ---
 title: "Privredno pravo"
-description: "Pravno savetovanje i zastupanje privrednih društava, izrada ugovora i zaštita poslovnih interesa"
+description: "Podrška privrednim društvima kod osnivanja, sastavljanja ugovora i zaštite poslovnih interesa."
 ---
 
 Privredno pravo obuhvata pravne norme kojima se uređuje osnivanje, poslovanje i prestanak privrednih subjekata, kao i njihov međusobni odnos. Uloga advokata u ovoj oblasti nije samo da "gasi požare", već da predupredi pravne rizike, pruži jasne i praktične savete, učestvuje u izradi i analizi ugovora, pripremi osnivačke akte i prati sve poslovne promene kroz prizmu zakona.

@@ -1,6 +1,6 @@
 ---
 title: "Porodično pravo i razvod braka"
-description: "Stručno zastupanje u razvodu braka, starateljstvu nad decom i drugim porodičnim pitanjima sa empatijom i razumevanjem"
+description: "Zastupanje u bračnim i porodičnim sporovima – od razvoda i pitanja staranja o deci do podele bračne imovine."
 ---
 
 Porodični odnosi su temelj naših života, ali ujedno i najosetljivija pravna oblast. Razlog ne leži u brojnosti propisa ili kompleksnosti samih postupaka, već u činjenici da se pri rešavanju problema iz ove pravne oblasti zadire u emotivna i intimna pitanja klijenata kojima je rešavanje ove vrste problema od presudne važnosti. Imajući u vidu da su u sporovima iz porodičnih odnosa često pogođeni i interesi dece, te da se radi o naročito osetljivim postupcima, ovoj vrsti sporova i postupaka pristupam sa izuzetnom pažnjom i posvećenošću. Neke od najvažnijih advokatskih usluga koje pružam iz ove pravne oblasti podrazumevaju:

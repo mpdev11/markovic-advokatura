@@ -1,6 +1,6 @@
 ---
 title: "Radno pravo"
-description: "Zastupanje u radnim sporovima, zaštita prava zaposlenih i poslodavaca"
+description: "Zaštita prava zaposlenih i poslodavaca u radnim odnosima i sporovima."
 ---
 
 Bez obzira da li ste zaposleni ili poslodavac, poštovanje zakona o radu, kao i drugih akata poput pravilnika i ugovora o radu, ključno je za harmonične radne odnose koji treba da funkcionišu u obostranom interesu. Samim tim, iz ove pravne oblasti advokatske usluge su usmerene kako ka poslodavcima, tako i ka zaposlenima.

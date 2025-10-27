@@ -1,6 +1,6 @@
 ---
 title: "Nasledno pravo"
-description: "Pomoć pri ostavinskim postupcima, sastavljanju testamenta i raspodeli nasledstva"
+description: "Pomoć u ostavinskim postupcima, sastavljanju testamenta i naslednopravnih ugovora."
 ---
 
 Nasledno pravo uređuje prenos imovine odnosno ukupnost imovinskih prava i obaveza sa preminulog lica (ostavioca) na njegove naslednike. Nasleđivanje može biti zakonsko – kada nema važećeg testamenta i kada se naslednici određuju po zakonskim naslednim redovima, i testamentarno – kada je ostavilac za života sastavio važeći testament kojim raspolaže svojom imovinom.

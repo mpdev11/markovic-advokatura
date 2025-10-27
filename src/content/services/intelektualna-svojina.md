@@ -1,6 +1,6 @@
 ---
 title: "Intelektualna svojina"
-description: "Zaštita autorskih prava, patenata, zaštitnih znakova i drugih oblika intelektualne svojine"
+description: "Zaštita autorskih prava, patenata, žigova i drugih prava intelektualne svojine."
 ---
 
 Pravo intelektualne svojine obuhvata priznavanje, zaštitu i iskorišćavanje nematerijalnih dobara nastalih kao rezultat originalnog stvaralačkog rada. Bilo da je reč o književnom ili umetničkom autorskom delu, naučnoj inovaciji, originalnoj oznaci, dizajnu ili tehničkom unapređenju, iako nematerijalna, ova dobra često predstavljaju ključnu imovinu pojedinaca, preduzetnika ili kompanija.
